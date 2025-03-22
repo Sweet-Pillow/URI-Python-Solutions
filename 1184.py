@@ -1,32 +1,25 @@
-def main():
-    O = input()
-    T = 12
-    M = []
-    L = [''] * T
-    soma = 0
+O = input()
 
-    for i in range(0, T):
-        for j in range(0, T):
-            L[j] = float(input())
+M = []
+aux = 1
+soma = 0
+quantidadeElementos = 0
+linha = coluna = 12
 
-        M.append(L)
+for i in range(linha):
+    M.append([])
+    for j in range(coluna):
+        auxf = float(input())
+        M[i].append(auxf)
 
-    cont = 1
-    for i in range(1, T):
-        for j in range(0, cont):
-            print(M[i][j])
-            soma += M[i][j]
+for i in range(1, linha):
+    for j in range(0, aux):
+        soma = soma + M[i][j]
+        quantidadeElementos = quantidadeElementos + 1
+    aux = aux + 1 
 
-        cont += 1
+if(O == "S"):
+    print(soma)
 
-    if O == 'S':
-        print(f'{soma:.1f}')
-
-    elif O == 'M':
-        print(f'{soma/66:.1f}')
-        #66
-    print(M)
-
-
-if __name__ == '__main__':
-    main()
+else:
+    print(round(soma/quantidadeElementos, 1))
